@@ -22,7 +22,47 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className={"min-h-full flex flex-col"}>
+  <header className="border-b border-gray-200">
+    <nav className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" className="text-xl font-bold text-slate-900">
+        Credex
+      </a>
+      <div className="flex items-center gap-6">
+        <a href="/who-we-serve" className="text-gray-600 hover:text-slate-900">
+          Who We Serve
+        </a>
+        <a href="/about" className="text-gray-600 hover:text-slate-900">
+          About
+        </a>
+        <a href="/faq" className="text-gray-600 hover:text-slate-900">
+          FAQ
+        </a>
+        
+        <a  href="/contact"
+          className="rounded-lg bg-blue-600 px-5 py-2 text-white font-medium hover:bg-blue-700 transition"
+        >
+          Get Started
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  {children}
+
+  <footer className="border-t border-gray-200 mt-24">
+    <div className="max-w-5xl mx-auto px-6 py-12 text-sm text-gray-600">
+      <p className="font-semibold text-slate-900">Credex LLC</p>
+      <p className="mt-2">Insurance credentialing for healthcare providers.</p>
+      <p className="mt-4">
+        <a href="/contact" className="hover:text-slate-900">Contact</a>
+      </p>
+      <p className="mt-6 text-gray-400">
+        © {new Date().getFullYear()} Credex LLC. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</body>
     </html>
   );
 }
